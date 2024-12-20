@@ -1,0 +1,21 @@
+.TodoItem {
+    width: 500px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+
+.item__title{
+    margin: 1rem;
+}
+
+.item__actions {
+    display: flex;
+    gap: 1rem;
+}
+
