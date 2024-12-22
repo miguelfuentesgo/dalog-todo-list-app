@@ -1,4 +1,4 @@
-import styles from './SearchBar.module.css'
+import styles from './SearchBar.module.scss'
 export const SearchBar = () => {
     return (
         <div className={styles.SearchBar}>

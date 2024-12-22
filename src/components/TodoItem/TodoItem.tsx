@@ -1,4 +1,4 @@
-import styles from './TodoItem.module.css'
+import styles from './TodoItem.module.scss'
 export const TodoItem = () => {
     return (
         <div className={styles.TodoItem}>
@@ -6,7 +6,11 @@ export const TodoItem = () => {
                 <h3>Todo Item</h3>
             </div>
             <div className={styles.item__actions}>
-            <input type="checkbox" />
+                <select id="task-status" name="task-status">
+                    <option value="todo">ToDo</option>
+                    <option value="doing">Doing</option>
+                    <option value="completed">Completed</option>
+                </select>
             <button>Delete</button>
             </div>
         </div>
