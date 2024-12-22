@@ -13,7 +13,7 @@ This is a simple Todo application built with React and TypeScript.
 
 ```bash
 git clone https://github.com/miguelfuentesgo/dalog-todo-list-app.git
-cd todo-app
+cd dalog-todo-list-app
 ```
 
 2. Install the dependencies:
