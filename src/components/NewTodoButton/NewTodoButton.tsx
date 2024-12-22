@@ -1,7 +1,11 @@
 import styles from './NewTodoButton.module.scss'
-export const NewTodoButton = () => {
+
+interface NewTodoButtonProps {
+    onClick: () => void;
+}
+export const NewTodoButton = ({onClick}:NewTodoButtonProps) => {
     return (
-        <div className={styles.NewTodoButton}>
+        <div className={styles.NewTodoButton} onClick={onClick}>
             <button>
                 +
             </button>
