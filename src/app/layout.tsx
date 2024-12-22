@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Navbar } from 'app/components/Navbar'
-import { Footer } from 'app/components/Footer'
-import { TasksProvider } from "app/context/TasksContext";
+import { TasksProvider } from "app/app/context/TasksContext";
 
 export const metadata: Metadata = {
   title: 'Dalog Todo List',
@@ -20,7 +19,6 @@ export default function RootLayout({
         <TasksProvider>
         <Navbar />
         {children}
-        <Footer />
         </TasksProvider>
       </body>
     </html>

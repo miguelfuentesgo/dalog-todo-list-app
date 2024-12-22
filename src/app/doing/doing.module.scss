@@ -1,0 +1,31 @@
+.doingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 1.5rem;
+        margin: 20px;
+
+        .icon {
+            color: violet
+        }
+    }
+
+    .doing {
+        width: 400px;
+        position: relative;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        
+    
+        
+    }
+}

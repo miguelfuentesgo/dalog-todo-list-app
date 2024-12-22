@@ -1,6 +1,6 @@
 .TodoItem {
     position: relative;
-    width: 400px;
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 0.5rem;
@@ -20,12 +20,19 @@
 
 
 .item__title{
-    margin: 1rem;
+    margin: 10px;;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: calc(100% - 30px);
+    text-overflow: ellipsis;
 }
 
 .item__actions {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 .item__closeIcon {
@@ -44,9 +51,22 @@
     width: 100%;
 }
 
+
 .actionsEditVersion{
     display: flex;
     align-items: center;
+    gap: 5px;
+    button {
+        color: #000;
+        border: 1px solid transparent;
+        height: min-content;
+
+        &:hover {
+            background-color: transparent;
+            border-color: #000;
+        }
+    }
+        
 }
 
 

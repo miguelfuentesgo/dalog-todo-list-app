@@ -4,13 +4,16 @@ import { Task } from 'app/models/Task';
 import { createContext, useContext, ReactNode } from 'react';
 
 interface TaskContextType {
-  tasks: Array<Task>;
+  tasks: Task[];
+  todoTasks: Task[];
+  doingTasks: Task[];
+  doneTasks: Task[];
   setTasks: (tasks:Array<Task>) => void;
   addTask: (task: Task) => void;
 }
 
 // Create a context with a default value
-const TaskContext = createContext<TaskContextType | undefined>(undefined);
+export const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
 interface TaskProviderProps {
   children: ReactNode;
@@ -51,14 +54,18 @@ const defaultTasks: Array<Task> = [
 
 // Create a provider component to manage the theme state
 export const TasksProvider = ({ children }: TaskProviderProps) => {
-    const [tasks, setTasks] = useState(defaultTasks);
-
+    const [tasks, setTasks] = useState(defaultTasks) //useState<Task[]>([]);
+    
     const addTask = (task: Task) => {
         setTasks([...tasks, task]);
     }
 
+  const todoTasks = tasks.filter((task) => task.status === "todo");
+  const doingTasks = tasks.filter((task) => task.status === "doing");
+  const doneTasks = tasks.filter((task) => task.status === "done");
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, setTasks }}>
+    <TaskContext.Provider value={{ tasks, todoTasks, doingTasks, doneTasks, addTask, setTasks }}>
       {children}
     </TaskContext.Provider>
   );

@@ -1,0 +1,17 @@
+.CreateTaskDialog {
+    
+}
+
+.DialogActions {
+    button {
+        color: #000;
+        border: 1px solid transparent;
+        height: min-content;
+
+        &:hover {
+            background-color: transparent;
+            border-color: #000;
+        }
+    }
+        
+}

@@ -30,18 +30,17 @@
     border-radius: 4px;
     border: 1px solid transparent;
     cursor: pointer;
-
+    color: #fff;
 
     &:hover {    
         border: 1px solid #fff;
       }
   }
-  
-  .navLink {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-  
-    
+
+  .itemDisabled{
+    opacity: 0.8;
+    cursor: not-allowed;
+    color: #aaa; /* Gray out the text */
+    pointer-events: none;
   }
 }
