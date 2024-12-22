@@ -62,12 +62,8 @@ export const TodoItem = ({task}:TodoItemProps) => {
             console.log(updatedTask.status)
             setCurrentTask(newUpdatedTask);
 
-            const newTasks = tasks.map((task) => {
-                if(task.id === currentTask.id) {
-                    task.status = value as TaskStatus
-                }
-                return task
-            })
+            const newTasks = tasks.filter((task) => task.id !== newUpdatedTask.id)
+            newTasks.push(newUpdatedTask)
             setTasks(newTasks)
         }
     };
@@ -75,12 +71,8 @@ export const TodoItem = ({task}:TodoItemProps) => {
     const handleConfirmAction =  () => {
         if(action === 'update') {
             setCurrentTask(updatedTask);
-            const newTasks = tasks.map((task) => {
-                if(task.id === currentTask.id) {
-                    task.status = updatedTask.status as TaskStatus
-                }
-                return task
-            })
+            const newTasks = tasks.filter((task) => task.id !== updatedTask.id)
+            newTasks.push(updatedTask)
             setTasks(newTasks)
         } else if (action === 'delete') {
             const newTasks = tasks.filter(task => task.id !== currentTask.id)
@@ -110,6 +102,14 @@ export const TodoItem = ({task}:TodoItemProps) => {
     const handleApplyChanges = (e: React.MouseEvent) => {
         e.stopPropagation();
         setCurrentTask(updatedTask);
+        const newTasks = tasks.map((task) => {
+            if(task.id === updatedTask.id) {
+                task.title = updatedTask.title as string    
+            }
+            return task
+        })
+        setTasks(newTasks)
+
         setEditVersion(false)
         setShowActions(false)
     }
