@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Task } from 'app/models/Task';
 import { createContext, useContext, ReactNode } from 'react';
 
-interface TaskContextType {
+export interface TaskContextType {
   tasks: Task[];
   todoTasks: Task[];
   doingTasks: Task[];
@@ -19,7 +19,7 @@ interface TaskProviderProps {
   children: ReactNode;
 }
 
-const defaultTasks: Array<Task> = [
+const defaultTasks: Task[] = [
     {
       id: "1",
       title: "Cut onion",
@@ -54,7 +54,7 @@ const defaultTasks: Array<Task> = [
 
 // Create a provider component to manage the theme state
 export const TasksProvider = ({ children }: TaskProviderProps) => {
-    const [tasks, setTasks] = useState(defaultTasks) //useState<Task[]>([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
     
     const addTask = (task: Task) => {
         setTasks([...tasks, task]);
